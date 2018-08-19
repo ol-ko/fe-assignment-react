@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import './ListingList.css';
 
 import ToDo1 from '../todos/ToDo1';
-import {Link} from "react-router-dom";
 
 class ListingList extends Component {
     componentDidMount() {
