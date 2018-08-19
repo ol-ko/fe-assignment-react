@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import './App.css';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import reducers from './store/reducers.js';
 
-import Home from './components/Home';
-import DetailPage from './components/DetailPage';
+import Home from './pages/Home';
 
-const store = createStore(reducers);
+const store = createStore(reducers, applyMiddleware(thunk));
 
 class App extends Component {
     render() {
@@ -22,7 +22,6 @@ class App extends Component {
 
                         <div className="App">
                             <Route exact path="/" component={Home}/>
-                            <Route exact path="/detail/:listingId" component={DetailPage}/>
                         </div>
                     </div>
                 </Router>

@@ -1,22 +1,39 @@
 import React, {Component} from "react";
+import './ListingList.css';
+
+import ToDo1 from '../todos/ToDo1';
+import {Link} from "react-router-dom";
 
 class ListingList extends Component {
     componentDidMount() {
         this.props.fetchListings();
     }
-    render() {
-        const listingList = this.props.listings.map((listing) => (
-            <li>{ listing.title }</li>
-        ));
 
+    getListingImage(listing) {
+        return listing.images ? (<img src={listing.images[0]} alt={listing.title}/>) : '';
+    }
+
+    getListingList() {
+        return this.props.listings.map((listing, key) => {
+            return (
+                <li className="listing" key={key}>
+                    <div className="img">
+                        {this.getListingImage(listing)}
+                    </div>
+                    <p>
+                        {listing.title}
+                    </p>
+                </li>
+            )
+        });
+    }
+
+    render() {
         return (
             <div>
-                <div className="todo">
-                    <h2>TODO 1: Navigation to property details</h2>
-                    <p>User should be able to navigate to the details page by clicking on the property.</p>
-                </div>
-                <ul>
-                    { listingList }
+                <ToDo1></ToDo1>
+                <ul className="listing-list">
+                    { this.getListingList() }
                 </ul>
             </div>
         )
