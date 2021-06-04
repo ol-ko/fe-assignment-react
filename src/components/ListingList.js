@@ -22,8 +22,8 @@ function ListingList() {
                 {data.listings.map(listing => (
                     <li key={listing.id} className="listing">
                         <div className="img">
-                            {listing.images && listing.images.length > 0 &&
-                            <img src={listing.images[0]} alt={listing.title}/>
+                            {listing.image &&
+                            <img src={listing.image} alt={listing.title}/>
                             }
                         </div>
                         <p>
