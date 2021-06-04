@@ -5,8 +5,8 @@
 }
 
 .listing {
-    padding: 40px;
-    clear: both;
+    padding: 20px 0;
+    display: flex;
 }
 
 .listing .img {
@@ -14,7 +14,6 @@
     height: 100px;
     position: relative;
     overflow: hidden;
-    float: left;
     background: #eaeaea;
 }
 
@@ -26,5 +25,5 @@
 }
 
 .listing p {
-    margin-left: 180px;
+    padding: 0 0 0 20px;
 }

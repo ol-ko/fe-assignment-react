@@ -1,42 +1,39 @@
-import React, {Component} from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './ListingList.css';
 
-import ToDo1 from '../todos/ToDo1';
+function ListingList() {
+    const [data, setData] = useState({ listings: [] });
 
-class ListingList extends Component {
-    componentDidMount() {
-        this.props.fetchListings();
-    }
+    useEffect(() => {
+        async function fetchListings() {
+            const response = await axios(
+                'https://ebkqjitsgh.execute-api.eu-central-1.amazonaws.com/prod/listings/'
+            );
 
-    getListingImage(listing) {
-        return listing.images ? (<img src={listing.images[0]} alt={listing.title}/>) : '';
-    }
+            setData({ listings: response.data});
+        }
+        fetchListings();
+    }, []);
 
-    getListingList() {
-        return this.props.listings.map((listing, key) => {
-            return (
-                <li className="listing" key={key}>
-                    <div className="img">
-                        {this.getListingImage(listing)}
-                    </div>
-                    <p>
-                        {listing.title}
-                    </p>
-                </li>
-            )
-        });
-    }
-
-    render() {
-        return (
-            <div>
-                <ToDo1></ToDo1>
-                <ul className="listing-list">
-                    { this.getListingList() }
-                </ul>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <ul className="listing-list">
+                {data.listings.map(listing => (
+                    <li key={listing.id} className="listing">
+                        <div className="img">
+                            {listing.images && listing.images.length > 0 &&
+                            <img src={listing.images[0]} alt={listing.title}/>
+                            }
+                        </div>
+                        <p>
+                            {listing.title}
+                        </p>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 }
 
 export default ListingList;

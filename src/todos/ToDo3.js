@@ -9,8 +9,8 @@ class ToDo3 extends Component {
                     Fetch the ids of similar listings from this REST API:
                 </p>
                 <p>
-                    <a href="https://properties-34748.firebaseio.com/similar/1.json">
-                        https://properties-34748.firebaseio.com/similar/1.json
+                    <a href="https://ebkqjitsgh.execute-api.eu-central-1.amazonaws.com/prod/listings/1/similar">
+                        https://ebkqjitsgh.execute-api.eu-central-1.amazonaws.com/prod/listings/1/similar
                     </a>
                 </p>
                 <p>where "1" is an id of a property you are fetching similar listings for.</p>
