@@ -1,3 +1,5 @@
+@import "../styles/variables";
+
 .listing-list{
     list-style-type: none;
     margin: 0;
@@ -13,13 +15,22 @@
         height: 100px;
         position: relative;
         overflow: hidden;
-        background: #eaeaea;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $color-grey;
 
         img {
             position: absolute;
             width: 100%;
             top: 50%;
             transform: translateY(-50%);
+        }
+
+        &:empty:before {
+            content: 'No image';
+            font-style: italic;
+            color: $color-darkgrey;
         }
     }
 
