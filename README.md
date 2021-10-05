@@ -4,9 +4,9 @@ In this exercise you will be extending an existing React application by completi
 
 The goal of this exercise is NOT to complete all the tasks in the shortest possible time, but to have a conversation about frontend, React, JavaScript, CSS, HTML, good coding practices and your experience.
 
-Everything (well, almost) is allowed - googling, using StackOverflow, external libraries, asking your interviewer for help or even pair programming with them.
+Everything (well, almost) is allowed - googling, using StackOverflow, external libraries. Your interviewer is there to help and the interview experience is meant to resemble pair programming.
 
-The only thing we require is that while you go through the exercise you also narrate your thoughts - what do you think the problem is, how are you planning to approach things, etc. 
+The only thing we ask for is that you narrate your thoughts as you go through the exercise - what do you think the problem is, how are you planning to approach things, etc. Of course it's fine to stop and think in silence for a bit, but we recommend to avoid longer pauses, especially when you get stuck. Your interviewer is there to support and unblock you.
 
 ## Running the app
 
